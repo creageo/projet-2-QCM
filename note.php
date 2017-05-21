@@ -1,3 +1,49 @@
+<?php
+
+$q1 = $_POST['q1'];
+
+$q2 = $_POST['q2'];
+
+$q3 = $_POST['q3'];
+
+$q4 = $_POST['q4'];
+
+$q5 = $_POST['q5'];
+
+$score = 0;
+
+if($q1 == "Un language informatique"){
+	$score ++;
+}
+if($q2 == "Un language informatique"){
+	$score ++;
+}
+if($q3 == "Un language informatique"){
+	$score ++;
+}
+if($q4 == "Un language informatique"){
+	$score ++;
+}
+if($q5 == "Une base de donnée"){
+	$score ++;
+}
+
+$email = $_POST['email'];
+
+$email = sanitize($email);
+
+$emailIsValid = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+function sanitize($email){
+	return strip_tags($email);
+}
+
+if ( $emailIsValid == true) {
+	mail($email, 'Résultat du QCM', "Ta note est de " . $score . "/5");
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,7 +115,7 @@
 		<?php 
 
 		echo "</br>";
-		echo $_POST['optionsRadios'];
+		echo $_POST['q1'];
 
 		?>
 
@@ -79,7 +125,7 @@
 
 		<br>
 
-		Un language indormatique
+		Un language informatique
 
 		<br><br>
 
@@ -92,7 +138,7 @@
 		<?php 
 
 		echo "</br>";
-		echo $_POST['optionsRadios2'];
+		echo $_POST['q2'];
 
 		?>
 
@@ -102,7 +148,7 @@
 
 		<br>
 
-		Un language indormatique
+		Un language informatique
 
 		<br><br>
 
@@ -115,7 +161,7 @@
 		<?php 
 
 		echo "</br>";
-		echo $_POST['optionsRadios3'];
+		echo $_POST['q3'];
 
 		?>
 
@@ -125,7 +171,7 @@
 
 		<br>
 
-		Un language indormatique
+		Un language informatique
 
 		<br><br>
 
@@ -138,7 +184,7 @@
 		<?php 
 
 		echo "</br>";
-		echo $_POST['optionsRadios4'];
+		echo $_POST['q4'];
 
 		?>
 
@@ -148,7 +194,7 @@
 
 		<br>
 
-		Un language indormatique
+		Un language informatique
 
 		<br><br>
 
@@ -161,7 +207,7 @@
 		<?php 
 
 		echo "</br>";
-		echo $_POST['optionsRadios5'];
+		echo $_POST['q5'];
 
 		?>
 
@@ -177,42 +223,7 @@
 
 		<?php
 
-		$optionsRadios = $_POST['optionsRadios'];
-
-		$optionsRadios2 = $_POST['optionsRadios2'];
-
-		$optionsRadios3 = $_POST['optionsRadios3'];
-
-		$optionsRadios4 = $_POST['optionsRadios4'];
-
-		$optionsRadios5 = $_POST['optionsRadios5'];
-
-		$score = 0;
-
-		if($optionsRadios == "Un language informatique"){
-			$score ++;
-		}
-		if($optionsRadios2 == "Un language informatique"){
-			$score ++;
-		}
-		if($optionsRadios3 == "Un language informatique"){
-			$score ++;
-		}
-		if($optionsRadios4 == "Un language informatique"){
-			$score ++;
-		}
-		if($optionsRadios5 == "Une base de donnée"){
-			$score ++;
-		}
-
 		echo "Ta note est de " . $score . "/5";
-
-		$email = $_POST['email'];
-
-		if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-			mail($email, 'Résultat du QCM', "Ta note est de " . $score . "/5");
-		}
-
 
 		?>
 
