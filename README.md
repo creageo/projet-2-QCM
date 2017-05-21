@@ -10,8 +10,8 @@ pure
 
 complément :
 
-validé :
+validé : oui
 
 responsive :
 
-sanitizé :
+sanitizé : oui
