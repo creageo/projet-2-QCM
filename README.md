@@ -4,10 +4,14 @@ code utilisé :
 
 html , css, php
 
+outil utilisé :
+
+pure
+
 complément :
 
-valid :
+validé :
 
-responsiv :
+responsive :
 
-sanitize :
+sanitizé :
