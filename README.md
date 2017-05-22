@@ -10,6 +10,8 @@ pure
 
 complément :
 
+label input
+
 validé : oui
 
 responsive :
