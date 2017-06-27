@@ -1,5 +1,6 @@
 <?php
 
+// je mets dans des variables les reponses de l'utilisateur
 $q1 = $_POST['q1'];
 
 $q2 = $_POST['q2'];
@@ -10,42 +11,66 @@ $q4 = $_POST['q4'];
 
 $q5 = $_POST['q5'];
 
+// je mets dans une variable le score de depart 0
 $score = 0;
 
+// si la reponse de la question 1 est egale a la bonne réponse on rajoute 1
 if($q1 == "Un language informatique"){
+
 	$score ++;
-}
-if($q2 == "Un language informatique"){
-	$score ++;
-}
-if($q3 == "Un language informatique"){
-	$score ++;
-}
-if($q4 == "Un language informatique"){
-	$score ++;
-}
-if($q5 == "Une base de donnée"){
-	$score ++;
+
 }
 
+if($q2 == "Un language informatique"){
+
+	$score ++;
+
+}
+
+if($q3 == "Un language informatique"){
+
+	$score ++;
+
+}
+
+if($q4 == "Un language informatique"){
+
+	$score ++;
+
+}
+
+if($q5 == "Une base de donnée"){
+
+	$score ++;
+
+}
+
+// je sanitize et valide l'email
 $email = $_POST['email'];
 
-$email = sanitize($email);
+$emailIsSani = sanitize($email);
 
-$emailIsValid = filter_var($email, FILTER_VALIDATE_EMAIL);
+$emailIsValid = filter_var($emailIsSani, FILTER_VALIDATE_EMAIL);
 
 function sanitize($email){
+
 	return strip_tags($email);
+
 }
 
-if ( $emailIsValid == true) {
+// si l'email est valide alors on retourne le resultat a l'utilisateur par email
+if($emailIsValid == true){
+
 	mail($email, 'Résultat du QCM', "Ta note est de " . $score . "/5");
+
 }
 
 ?>
 
 <!DOCTYPE html>
+
 <html>
+
 <head>
 
 	<title>QCM note</title>
@@ -57,6 +82,7 @@ if ( $emailIsValid == true) {
 	<meta charset="utf-8" />
 
 </head>
+
 <body>
 
 	<form class="pure-form" action="note.php" method="POST">
@@ -78,7 +104,11 @@ if ( $emailIsValid == true) {
 		<?php 
 
 		echo "</br>";
-		echo $_POST['prenom'];
+
+		//sanitization du prenom
+		$prenomsani = filter_var($_POST["prenom"], FILTER_SANITIZE_STRING);
+
+		echo($prenomsani);
 
 		?>
 
@@ -89,7 +119,11 @@ if ( $emailIsValid == true) {
 		<?php 
 
 		echo "</br>";
-		echo $_POST['nom'];
+
+		//sanitization du nom
+		$nomsani = filter_var($_POST["nom"], FILTER_SANITIZE_STRING);
+
+		echo($nomsani);
 
 		?>
 
@@ -100,6 +134,7 @@ if ( $emailIsValid == true) {
 		<?php 
 
 		echo "</br>";
+
 		echo $_POST['email'];
 
 		?>
@@ -115,6 +150,7 @@ if ( $emailIsValid == true) {
 		<?php 
 
 		echo "</br>";
+
 		echo $_POST['q1'];
 
 		?>
@@ -138,6 +174,7 @@ if ( $emailIsValid == true) {
 		<?php 
 
 		echo "</br>";
+
 		echo $_POST['q2'];
 
 		?>
@@ -161,6 +198,7 @@ if ( $emailIsValid == true) {
 		<?php 
 
 		echo "</br>";
+
 		echo $_POST['q3'];
 
 		?>
@@ -184,6 +222,7 @@ if ( $emailIsValid == true) {
 		<?php 
 
 		echo "</br>";
+
 		echo $_POST['q4'];
 
 		?>
@@ -207,6 +246,7 @@ if ( $emailIsValid == true) {
 		<?php 
 
 		echo "</br>";
+
 		echo $_POST['q5'];
 
 		?>
