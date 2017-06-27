@@ -1,19 +1,19 @@
 # projet-2-QCM
 
-code utilisé :
+code utilisé : hmtl css php pure
 
-html , css, php
+outil utilisé : sublimetext apache 000webhost
 
-outil utilisé :
+complément : 
 
-pure
+code valide : 
 
-complément :
+non-voyants : 
 
-label input
+sanitizé et validé : 
 
-validé : oui
+responsive : oui
 
-responsive :
+exercice : 
 
-sanitizé : oui
+mon evaluation sur 10 : 
