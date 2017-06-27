@@ -4,7 +4,7 @@ code utilisé : hmtl css php pure
 
 outil utilisé : sublimetext apache 000webhost
 
-complément : https://creageo2.000webhostapp.com/
+complément : https://creageo.github.io/projet-2-QCM/ https://creageo2.000webhostapp.com/
 
 code valide : 
 
