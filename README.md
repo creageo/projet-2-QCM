@@ -10,7 +10,7 @@ code valide : oui
 
 non-voyants : oui
 
-sanitizé et validé : 
+sanitizé et validé : oui
 
 responsive : oui
 
