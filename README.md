@@ -14,6 +14,6 @@ sanitizé et validé :
 
 responsive : oui
 
-exercice : 
+exercice : https://github.com/becodeorg/BXLCentral/tree/master/Projects/2-QCM
 
-mon evaluation sur 10 : 
+mon evaluation sur 10 : 6/10
