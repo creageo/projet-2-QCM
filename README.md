@@ -6,9 +6,9 @@ outil utilisé : sublimetext apache 000webhost
 
 complément : https://creageo.github.io/projet-2-QCM/ https://creageo2.000webhostapp.com/
 
-code valide : 
+code valide : oui
 
-non-voyants : 
+non-voyants : oui
 
 sanitizé et validé : 
 
